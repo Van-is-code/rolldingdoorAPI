@@ -2,5 +2,9 @@ package api.rollingdoor.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-@Data @AllArgsConstructor
-public class MessageResponse { private String message; }
+
+@Data
+@AllArgsConstructor
+public class MessageResponse {
+    private String message;
+}
