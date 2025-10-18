@@ -19,7 +19,10 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@Valid @RequestBody RegisterRequest registerRequest) {
         authService.registerUser(registerRequest);
-        return ResponseEntity.ok("User registered successfully");
+        // SỬA LẠI: Trả về một Map (sẽ được Spring chuyển thành JSON)
+        return ResponseEntity.ok(Map.of("message", "User registered successfully"));
+        // Hoặc trả về một đối tượng DTO đơn giản nếu muốn
+        // return ResponseEntity.ok(new MessageResponse("User registered successfully"));
     }
 
     @PostMapping("/login")
